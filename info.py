@@ -11,7 +11,7 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
+SESSION = environ.get('SESSION', 'Movieprovider')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
@@ -32,31 +32,31 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
-auth_grp = environ.get('AUTH_GROUP')
+auth_channel = environ.get('-1001327884100'')
+auth_grp = environ.get('')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 FILDLT_CNL = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('FILDLT_CNL', '0').split()]
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "EvaMaria")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Rishi09")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Channel Button Links
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/CyniteSupport')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/CyniteBackup')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', CyniteSupport')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/ipopcornofficialgroup')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/rk_update')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://telegram.dog/Rkbotzbot')
 MSG_ALRT = environ.get('MSG_ALRT', 'Share and Support Us')
 
 # Custom Chats
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', 0))
-FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
-FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 't.me/Restricttest')
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', -1001650225505))
+FILE_CHANNEL = int(environ.get('FILE_CHANNEL', -1001699469796))
+FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', '')
 
 # Log Channels
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
-RQST_LOG_CHANNEL = int(environ.get('RQST_LOG_CHANNEL', 0))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001341141783))
+RQST_LOG_CHANNEL = int(environ.get('RQST_LOG_CHANNEL', -1001341141783))
 
 # Bot Options
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
